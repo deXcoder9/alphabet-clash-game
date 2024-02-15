@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="forest">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alpha Clash</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <title>Alpha Clash typing Game</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
@@ -14,67 +15,67 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <main class="">
+    <main class="bg-black mt-0">
         <!-- !first -->
-        <section id="firstInterface" class=" hidden  min-h-screen flex flex-col justify-center items-center">
+        <section id="firstInterface" class="   min-h-screen flex flex-col justify-center items-center ">
             <div class="content text-white flex flex-col justify-center items-center ">
                 <h1 class="text-9xl tracking-wide font-anton">ALPHABET CLASH</h1>
                 <p class="mt-8">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-                <button class="mt-8 font-bold bg-white text-black rounded-md px-7 py-4" >Play Now</button>
+                <button onclick="playTheGame()" class="mt-8 font-bold bg-white text-black rounded-md px-7 py-4" >Play Now</button>
             </div>
         </section>
         <!-- !second  -->
-        <section id="secondInterface" class=" hidden  flex justify-center items-center gap-1 my-1 w-full min-h-screen">
-            <div id="secondPhaseContainer" class=" space-y-20 relative">
-                <div id="typingScreen" class=" w-[1000px] h-[400px] bg-[#FFFFFFCC]  ]">
-                    <p class="text-9xl text-black all-center">Y</p>
+        <section id="secondInterface" class=" hidden   flex justify-center items-center gap-1 w-full min-h-screen">
+            <div id="secondPhaseContainer" class=" space-y-20 relative rounded-2xl">
+                <div id="typingScreen" class=" w-[1000px] h-[400px] bg-[#FFFFFFCC] rounded-2xl ">
+                    <p id="displayingAlphabet" class="text-9xl text-black all-center">Y</p>
                 </div>
-                <div class="keyboard ">
-                    <div class="flex justify-center gap-1 my-1 w-full">
-                        <kbd class="kbd">q</kbd>
-                        <kbd class="kbd">w</kbd>
-                        <kbd class="kbd">e</kbd>
-                        <kbd class="kbd">r</kbd>
-                        <kbd class="kbd">t</kbd>
-                        <kbd class="kbd">y</kbd>
-                        <kbd class="kbd">u</kbd>
-                        <kbd class="kbd">i</kbd>
-                        <kbd class="kbd">o</kbd>
-                        <kbd class="kbd">p</kbd>
+                <div class="keyboard font-bold">
+                    <div class="flex justify-center gap-1 my-2 w-full text-[25px]">
+                        <kbd id="q" class="kbd">q</kbd>
+                        <kbd id="w" class="kbd">w</kbd>
+                        <kbd id="e" class="kbd">e</kbd>
+                        <kbd id="r" class="kbd">r</kbd>
+                        <kbd id="t" class="kbd">t</kbd>
+                        <kbd id="y" class="kbd">y</kbd>
+                        <kbd id="u" class="kbd">u</kbd>
+                        <kbd id="i" class="kbd">i</kbd>
+                        <kbd id="o" class="kbd">o</kbd>
+                        <kbd id="p" class="kbd">p</kbd>
                       </div> 
-                      <div class="flex justify-center gap-1 my-1 w-full">
-                        <kbd class="kbd">a</kbd>
-                        <kbd class="kbd">s</kbd>
-                        <kbd class="kbd">d</kbd>
-                        <kbd class="kbd">f</kbd>
-                        <kbd class="kbd">g</kbd>
-                        <kbd class="kbd">h</kbd>
-                        <kbd class="kbd">j</kbd>
-                        <kbd class="kbd">k</kbd>
-                        <kbd class="kbd">l</kbd>
+                      <div class="flex justify-center gap-1 my-1 w-full text-[23px]">
+                        <kbd id="a" class="kbd">a</kbd>
+                        <kbd id="s" class="kbd">s</kbd>
+                        <kbd id="d" class="kbd">d</kbd>
+                        <kbd id="f" class="kbd">f</kbd>
+                        <kbd id="g" class="kbd">g</kbd>
+                        <kbd id="h" class="kbd">h</kbd>
+                        <kbd id="j" class="kbd">j</kbd>
+                        <kbd id="k" class="kbd">k</kbd>
+                        <kbd id="l" class="kbd">l</kbd>
                       </div> 
-                      <div class="flex justify-center gap-1 my-1 w-full">
-                        <kbd class="kbd">z</kbd>
-                        <kbd class="kbd">x</kbd>
-                        <kbd class="kbd">c</kbd>
-                        <kbd class="kbd">v</kbd>
-                        <kbd class="kbd">b</kbd>
-                        <kbd class="kbd">n</kbd>
-                        <kbd class="kbd">m</kbd>
-                        <kbd class="kbd">/</kbd>
+                      <div class="flex justify-center gap-1 my-1 w-full text-[22px]">
+                        <kbd id="z" class="kbd">z</kbd>
+                        <kbd id="x" class="kbd">x</kbd>
+                        <kbd id="c" class="kbd">c</kbd>
+                        <kbd id="v" class="kbd">v</kbd>
+                        <kbd id="b" class="kbd">b</kbd>
+                        <kbd id="n" class="kbd">n</kbd>
+                        <kbd id="m" class="kbd">m</kbd>
+                        <kbd id="/" class="kbd">/</kbd>
                       </div>
                 </div>
-                <div id="pointsAndlives" class="flex justify-between">
-                    <button class="bg-[#894189] px-7 rounded-lg py-3 font-bold">Life <i class="fa-solid  px-2 fa-heart-circle-plus" style="color: #ffffff;"></i> 1</button>
-                    <button class="bg-[#360490] px-7 rounded-lg py-3 font-bold">Score <i class="fa-solid px-2  fa-sack-dollar" style="color: #ffffff;"></i> 1</button>
+                <div id="pointsAndlives" class="flex justify-between text-white">
+                    <button  class="bg-[#894189] px-7 rounded-lg py-3 font-semibold ">Life <i class="fa-solid  px-2 fa-heart-circle-plus" style="color: #ffffff;"></i> <span id="life">3</span></button>
+                    <button  class="bg-[#360490] px-7 rounded-lg py-3 font-semibold">Score <i class="fa-solid px-2  fa-sack-dollar" style="color: #ffffff;"></i> <span id="score">0</span></button>
                 </div>
             </div>
         </section>
         <!-- !third -->
-        <section id="thirdInterface" class="min-h-screen flex items-center justify-center  ">
-            <div class="border-2 card-bg flex flex-col justify-center items-center space-y-7 text-white">
-                <h1 class="text-6xl font-bold">Score: <span>15</span></h1>
-                <button class="px-7 rounded-lg py-3 font-bold btn bg-white text-black">Play Again</button>
+        <section id="thirdInterface" class="min-h-screen flex items-center justify-center hidden ">
+            <div class="border-2 card-bg flex flex-col justify-center items-center space-y-7 text-white rounded-xl">
+                <h1 class="text-6xl font-bold ">Score: <span id="finalScore">0</span></h1>
+                <button onclick="PlagAgain()" id="playAgain" class="px-7 rounded-lg py-3 font-bold bg-white   text-black btn-hover hover:text-white ease-in delay-100">Play Again</button>
                 <p>Practice will make you PRO</p>
             </div>
         </section>

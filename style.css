@@ -31,3 +31,6 @@ main{
     width: 400px;
     height: 270px;
 }
+.btn-hover:hover{
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.656), transparent);
+}
